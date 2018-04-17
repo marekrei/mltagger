@@ -20,7 +20,7 @@ For error detection, this would be something like:
     show    c
     
 
-The sentence-level labels are constructed from this annotation automatically, after setting the *default_label* value.
+The binary word-level and sentence-level labels are constructed from this format automatically, based on the *default_label* value.
 Any word with *default_label* gets label 0, any word with other labels gets assigned 1.
 Any sentence that contains only *default_label* labels is assigned a sentence-level label 0, any sentence containing different labels gets assigned 1.
 
