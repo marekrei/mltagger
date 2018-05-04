@@ -435,9 +435,8 @@ class MLTModel(object):
         for variable in tf.global_variables():
             assert(variable.name not in dump["params"]), "Error: variable with this name already exists" + str(variable.name)
             dump["params"][variable.name] = self.session.run(variable)
-        f = file(filename, 'wb')
-        pickle.dump(dump, f, protocol=pickle.HIGHEST_PROTOCOL)
-        f.close()
+        with open(filename, 'wb') as f:
+            pickle.dump(dump, f, protocol=pickle.HIGHEST_PROTOCOL)
 
 
     @staticmethod
