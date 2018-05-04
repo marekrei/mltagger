@@ -6,7 +6,6 @@ Run experiment with
     python experiment.py config_file.conf
 
 
-
 Data format
 -------------------------
 
@@ -23,6 +22,16 @@ For error detection, this would be something like:
 The binary word-level and sentence-level labels are constructed from this format automatically, based on the *default_label* value.
 Any word with *default_label* gets label 0, any word with other labels gets assigned 1.
 Any sentence that contains only *default_label* labels is assigned a sentence-level label 0, any sentence containing different labels gets assigned 1.
+
+
+Printing model output
+-------------------------
+
+Print output from a saved model with
+
+    python print_output.py saved_model_path.model input_file.tsv
+
+This will print the original file with two additional columns: the token-level score and the sentence-level score. The latter will be the same for all tokens in a sentence.
 
 
 Configuration
